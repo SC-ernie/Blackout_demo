@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackout Customs | Tint & Headlight Restoration</title>
+  <meta name="description" content="Automotive and residential tinting, mobile service, and headlight restoration in the Antelope Valley area." />
+  <style>
+    :root{
+      --bg:#050607;
+      --panel:#0c0e11;
+      --panel-2:#12151a;
+      --text:#f4f4f5;
+      --muted:#9ca3af;
+      --line:#252a31;
+      --red:#d41118;
+      --red-2:#ff2a2f;
+      --silver:#c7cbd1;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 75% 10%, rgba(212,17,24,.14), transparent 28%),
+        linear-gradient(180deg,#050607 0%,#090b0e 100%);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1160px,calc(100% - 36px));margin:0 auto}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(5,6,7,.86);backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #343942}
+    .brand span{font-size:.95rem}
+    .nav-links{display:flex;align-items:center;gap:26px;color:#c7cbd1;font-size:.94rem}
+    .nav-links a:hover{color:white}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:10px;font-weight:800;border:1px solid transparent;transition:.22s ease;cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,var(--red),#9f0d12);box-shadow:0 12px 30px rgba(212,17,24,.22)}
+    .btn-primary:hover{transform:translateY(-2px);background:linear-gradient(135deg,var(--red-2),var(--red))}
+    .btn-ghost{border-color:#323741;background:#111318;color:#e4e4e7}
+    .btn-ghost:hover{border-color:#555c68;background:#171a20}
+    .hero{padding:92px 0 72px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#f2a3a6;text-transform:uppercase;font-size:.78rem;font-weight:800;letter-spacing:.16em;margin-bottom:16px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 18px var(--red)}
+    h1{font-size:clamp(3rem,7vw,6.6rem);line-height:.92;letter-spacing:-.055em;margin:0 0 24px;text-transform:uppercase}
+    h1 .accent{color:var(--red-2);display:block}
+    .hero p{color:#b7bdc7;font-size:1.08rem;max-width:650px;margin:0 0 30px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+    .mini-proof{display:flex;flex-wrap:wrap;gap:20px;color:#9ca3af;font-size:.9rem}
+    .mini-proof span{display:flex;align-items:center;gap:8px}
+    .mini-proof b{color:#fff}
+    .hero-card{
+      position:relative;min-height:520px;border:1px solid #242932;border-radius:26px;overflow:hidden;
+      background:
+        linear-gradient(160deg,rgba(255,255,255,.03),rgba(255,255,255,0)),
+        radial-gradient(circle at 50% 20%,rgba(212,17,24,.2),transparent 30%),#0a0c0f;
+      box-shadow:0 30px 80px rgba(0,0,0,.5)
+    }
+    .hero-card:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 45%,rgba(255,255,255,.035) 46%,transparent 47%);background-size:30px 30px;opacity:.34}
+    .hero-logo{position:absolute;inset:42px 0 auto;display:flex;justify-content:center}
+    .hero-logo img{width:min(78%,360px);aspect-ratio:1;border-radius:50%;object-fit:cover;filter:drop-shadow(0 20px 38px rgba(0,0,0,.6))}
+    .hero-strip{position:absolute;left:24px;right:24px;bottom:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .hero-stat{padding:16px 13px;border:1px solid #2c3139;background:rgba(12,14,17,.9);border-radius:14px;text-align:center}
+    .hero-stat strong{display:block;font-size:1.1rem}.hero-stat small{color:#8f96a3}
+    section{padding:76px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+    .section-head h2{font-size:clamp(2rem,4.5vw,3.8rem);line-height:1;letter-spacing:-.04em;margin:0;text-transform:uppercase}
+    .section-head p{max-width:560px;color:#9da4ae;margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{border:1px solid #252a31;background:linear-gradient(180deg,#101318,#0b0d10);border-radius:18px;padding:26px;transition:.25s ease}
+    .card:hover{transform:translateY(-4px);border-color:#3c424d}
+    .card .tag{display:inline-block;color:#ffb6b9;background:rgba(212,17,24,.12);border:1px solid rgba(212,17,24,.28);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:999px;margin-bottom:20px}
+    .card h3{margin:0 0 9px;font-size:1.3rem}.card p{margin:0;color:#9ca3af}
+    .shade-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px}
+    .shade-panel,.preview-panel{border:1px solid #252a31;background:#0b0d10;border-radius:22px;padding:30px}
+    .shade-panel{box-shadow:0 20px 50px rgba(0,0,0,.18)}
+    .shade-buttons{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:28px 0 20px}
+    .shade-button{padding:20px 10px;border:1px solid #313740;border-radius:14px;background:#12151a;color:white;font-size:1.25rem;font-weight:900;cursor:pointer;transition:.2s ease}
+    .shade-button:hover{transform:translateY(-3px);border-color:var(--red)}
+    .shade-button.active{background:linear-gradient(135deg,var(--red),#980d12);border-color:var(--red-2);box-shadow:0 0 28px rgba(212,17,24,.28)}
+    .shade-note{color:#9198a3;font-size:.92rem}
+    .preview-panel{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 0%,rgba(212,17,24,.16),transparent 32%),#0b0d10}
+    .preview-callout{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+    .preview-callout span{color:#f1a6aa;font-size:.76rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+    .preview-callout strong{font-size:3rem;line-height:1;color:white}
+    .window-preview{height:330px;border-radius:20px;position:relative;overflow:hidden;background:linear-gradient(135deg,#3a516a,#1b2531 55%,#0b0f14);border:1px solid #3a424f;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}
+    .window-preview:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.24),transparent 40%);mix-blend-mode:screen;z-index:2;pointer-events:none}
+    .window-preview:after{content:"TINT PREVIEW";position:absolute;left:18px;bottom:16px;z-index:3;font-size:.72rem;font-weight:900;letter-spacing:.16em;color:rgba(255,255,255,.72)}
+    .tint-overlay{position:absolute;inset:0;background:#000;opacity:.86;transition:.35s ease;z-index:1}
+    .preview-label{display:flex;justify-content:space-between;align-items:center;margin-top:16px;color:#aeb5c0}.preview-label strong{color:white;font-size:1rem}
+    .quote-form{display:grid;gap:14px}
+    .form-group{display:grid;gap:7px}
+    .form-group label{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#b7bdc7}
+    .form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid #2b3038;background:#0b0d10;color:white;border-radius:12px;padding:14px 15px;font:inherit;outline:none}
+    .form-group textarea{min-height:92px;resize:vertical}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--red)}
+    .quote-help{margin:10px 0 0;color:#858d98;font-size:.86rem}
+    .split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+    .feature-large{padding:34px;border:1px solid #252a31;background:linear-gradient(145deg,#101318,#090b0e);border-radius:22px}
+    .feature-large h3{font-size:2rem;margin:0 0 12px}.feature-large p{color:#a1a8b2;margin:0}
+    .checks{display:grid;gap:12px;margin-top:24px}.check{display:flex;gap:11px;align-items:flex-start;color:#d5d8dd}.check i{font-style:normal;color:var(--red-2);font-weight:900}
+    .service-banner{border:1px solid #2c3139;border-radius:22px;padding:32px;background:radial-gradient(circle at 85% 50%,rgba(212,17,24,.19),transparent 30%),#0c0f13;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .service-banner h3{font-size:1.8rem;margin:0 0 8px}.service-banner p{margin:0;color:#9da4ae;max-width:680px}
+    .quote{padding-bottom:100px}
+    .quote-box{display:grid;grid-template-columns:1fr .9fr;gap:34px;border:1px solid #2b3038;border-radius:24px;padding:38px;background:linear-gradient(135deg,#0e1115,#090b0e)}
+    .quote-box h2{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1;margin:0 0 16px;text-transform:uppercase}.quote-box p{color:#9da4ae;max-width:600px}
+    .quote-card{border:1px solid #2c3139;background:#11141a;border-radius:18px;padding:24px}
+    .quote-card .row{display:flex;justify-content:space-between;border-bottom:1px solid #272c33;padding:13px 0;color:#adb4bf}.quote-card .row:last-child{border-bottom:0}.quote-card b{color:#fff}
+    footer{border-top:1px solid #20242a;padding:28px 0 38px;color:#7e8792;font-size:.88rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:900px){.nav-links{display:none}.hero-grid,.shade-wrap,.split,.quote-box{grid-template-columns:1fr}.hero{padding-top:58px}.hero-card{min-height:430px}.cards{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.service-banner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.wrap{width:min(100% - 24px,1160px)}.nav-inner{height:66px}.brand span{font-size:.78rem}.brand img{width:42px;height:42px}.shade-buttons{grid-template-columns:repeat(3,1fr)}.hero-strip{grid-template-columns:1fr;bottom:14px;left:14px;right:14px}.hero-card{min-height:520px}.hero-stat{padding:10px}.hero-logo{top:28px}.hero-logo img{width:72%}.service-banner,.feature-large,.shade-panel,.preview-panel,.quote-box{padding:22px}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand"><img src="logo.png" alt="Blackout Customs logo"><span>Blackout Customs</span></a>
+      <div class="nav-links">
+        <a href="#films">Film Types</a>
+        <a href="#shades">Shades</a>
+        <a href="#residential">Residential</a>
+        <a href="#service">Service Area</a>
+      </div>
+      <a class="btn btn-primary" href="#quote">Get a Quote</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Antelope Valley Tint Specialists</div>
+          <h1>Drive cooler.<span class="accent">Look sharper.</span></h1>
+          <p>Automotive and architectural tinting with options for every budget—from carbon film to high-performance ceramic. Drop-off and mobile service available throughout the Antelope Valley.</p>
+          <div class="hero-actions">
+            <a href="#quote" class="btn btn-primary">Request a Quote</a>
+            <a href="#films" class="btn btn-ghost">Explore Film Options</a>
+          </div>
+          <div class="mini-proof">
+            <span><b>Up to 99%</b> UV rejection</span>
+            <span><b>3%–35%</b> shade options</span>
+            <span><b>Mobile</b> service available</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Blackout Customs brand card">
+          <div class="hero-logo"><img src="logo.png" alt="Blackout Customs"></div>
+          <div class="hero-strip">
+            <div class="hero-stat"><strong>Auto</strong><small>Tint</small></div>
+            <div class="hero-stat"><strong>Home</strong><small>Privacy Film</small></div>
+            <div class="hero-stat"><strong>Restore</strong><small>Headlights</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="films">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Choose your film.</h2>
+          <p>Three film styles let customers balance price, appearance, heat rejection, and longevity.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="tag">Best value</span>
+            <h3>Hybrid Film</h3>
+            <p>Carbon + ceramic construction that keeps pricing affordable while still providing heat rejection and up to 99% UV rejection.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Maximum comfort</span>
+            <h3>Ceramic</h3>
+            <p>Designed for customers who want stronger heat rejection and a cooler cabin without sacrificing visibility.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Budget friendly</span>
+            <h3>Carbon</h3>
+            <p>A cost-conscious option with good fade resistance and a clean, dark appearance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="shades">
+      <div class="wrap shade-wrap">
+        <div class="shade-panel">
+          <div class="eyebrow"><span class="dot"></span> Interactive Shade Preview</div>
+          <h2 style="font-size:2.7rem;line-height:1;margin:0">Choose your shade.</h2>
+          <p style="color:#9ca3af">Tap a percentage to instantly preview the darkness. Final appearance can vary based on glass, lighting, and film type.</p>
+          <div class="shade-buttons">
+            <button class="shade-button" data-shade="3">3%</button>
+            <button class="shade-button active" data-shade="5">5%</button>
+            <button class="shade-button" data-shade="15">15%</button>
+            <button class="shade-button" data-shade="20">20%</button>
+            <button class="shade-button" data-shade="35">35%</button>
+          </div>
+          <p class="shade-note">Ask about the best shade for your vehicle, privacy goals, and local tint regulations.</p>
+        </div>
+        <div class="preview-panel">
+          <div class="preview-callout"><span>Now Previewing</span><strong id="shadeLabel">5%</strong></div>
+          <div class="window-preview"><div class="tint-overlay" id="tintOverlay"></div></div>
+          <div class="preview-label"><span>Visible light transmission</span><strong>Tap a shade to compare</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="residential">
+      <div class="wrap split">
+        <div class="feature-large">
+          <div class="eyebrow"><span class="dot"></span> Residential Tinting</div>
+          <h3>More privacy. Less glare. Lower heat.</h3>
+          <p>Window film can make your home more comfortable while preserving your view outside.</p>
+          <div class="checks">
+            <div class="check"><i>✓</i><span>Added daytime privacy for your home</span></div>
+            <div class="check"><i>✓</i><span>Helps reduce heat gain and energy costs</span></div>
+            <div class="check"><i>✓</i><span>Reduces glare on TVs, monitors, and screens</span></div>
+            <div class="check"><i>✓</i><span>Keeps your view to the outside open</span></div>
+          </div>
+        </div>
+        <div class="feature-large">
+          <div class="eyebrow"><span class="dot"></span> Headlight Restoration</div>
+          <h3>Bring cloudy headlights back.</h3>
+          <p>Restore clarity and clean up the front-end appearance of your vehicle without immediately replacing the housings.</p>
+          <div class="checks">
+            <div class="check"><i>✓</i><span>Improved appearance</span></div>
+            <div class="check"><i>✓</i><span>Cleaner lens clarity</span></div>
+            <div class="check"><i>✓</i><span>Great add-on with tint service</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service">
+      <div class="wrap">
+        <div class="service-banner">
+          <div>
+            <h3>Drop-off or mobile—we come to you.</h3>
+            <p>Serving the Antelope Valley area. Mobile appointments are available, and distance may affect the final quote.</p>
+          </div>
+          <a href="#quote" class="btn btn-primary">Check Your Area</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote" id="quote">
+      <div class="wrap quote-box">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Quick Quote</div>
+          <h2>Build your message. Send it on Instagram.</h2>
+          <p>Keep it simple—add your vehicle, service, and shade preference. We’ll copy the details for you and open Blackout Customs on Instagram.</p>
+        </div>
+        <div class="quote-card">
+          <form class="quote-form" id="quoteForm">
+            <div class="form-group">
+              <label for="vehicle">Vehicle</label>
+              <input id="vehicle" type="text" placeholder="2022 Honda Civic">
+            </div>
+            <div class="form-group">
+              <label for="serviceType">Service</label>
+              <select id="serviceType">
+                <option>Automotive Tint</option>
+                <option>Residential Tint</option>
+                <option>Headlight Restoration</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="filmShade">Film / Shade</label>
+              <input id="filmShade" type="text" placeholder="Ceramic — 15%">
+            </div>
+            <div class="form-group">
+              <label for="quoteNotes">Notes</label>
+              <textarea id="quoteNotes" placeholder="Mobile service, which windows, questions, etc."></textarea>
+            </div>
+            <button class="btn btn-primary" type="button" id="instagramQuote">Copy Quote & Open Instagram ↗</button>
+            <p class="quote-help" id="quoteStatus">Your message will be copied so you can paste it directly into the DM.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Blackout Customs. Demo website concept.</span>
+      <span>Automotive & Architectural Tint • Headlight Restoration</span>
+    </div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.shade-button');
+    const overlay = document.getElementById('tintOverlay');
+    const label = document.getElementById('shadeLabel');
+    const opacityByShade = {3:.94,5:.89,15:.74,20:.65,35:.48};
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const shade = btn.dataset.shade;
+      overlay.style.opacity = opacityByShade[shade];
+      label.textContent = shade + '%';
+    }));
+
+    document.getElementById('instagramQuote').addEventListener('click', async () => {
+      const vehicle = document.getElementById('vehicle').value.trim();
+      const service = document.getElementById('serviceType').value;
+      const filmShade = document.getElementById('filmShade').value.trim();
+      const notes = document.getElementById('quoteNotes').value.trim();
+      const status = document.getElementById('quoteStatus');
+      const message = `Hi Blackout Customs! I'd like a quote.\n\nVehicle: ${vehicle || 'Not specified'}\nService: ${service}\nFilm / Shade: ${filmShade || 'Not sure yet'}\nNotes: ${notes || 'None'}`;
+
+      try {
+        await navigator.clipboard.writeText(message);
+        status.textContent = 'Quote copied — paste it into your Instagram DM.';
+      } catch (e) {
+        status.textContent = 'Instagram is opening. Copy your details from the form if needed.';
+      }
+
+      window.open('https://instagram.com/blackout_customzz', '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>
